@@ -10,7 +10,7 @@ public class Ej07_16 {
 	public static void main(String[] args) {
 		int size = 10;
 		int []array = new int[size]; 
-		int menor = 100, mayor = 0;
+		int menor = Integer.MAX_VALUE, mayor = Integer.MIN_VALUE;
 		
 		
 		for(int i = 0 ; i < size; i++){
