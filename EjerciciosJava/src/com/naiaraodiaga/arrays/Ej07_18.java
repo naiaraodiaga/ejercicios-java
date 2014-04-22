@@ -20,7 +20,7 @@ public class Ej07_18 {
 		for(int i = 0; i< size; i++){
 			array3[i] = array1[i];
 		}
-		for(int j = 5, i=0; j < array3.length && i < size; j++, i++){
+		for(int j = size, i=0; j < array3.length && i < size; j++, i++){
 				array3[j] = array2[i];	
 		}
 		System.out.println("Array 1: "+Arrays.toString(array1));
