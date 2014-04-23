@@ -12,8 +12,8 @@ public class Ej08_22main {
 		System.out.println("Introduzca un nœmero: ");
 		Scanner entrada = new Scanner(System.in);
 		int num = entrada.nextInt();
-		Primos primo = new Primos();
-		Vector<Integer> divisores = primo.divisoresPrimos(num);
+		Primos primo = new Primos(num);
+		Vector<Integer> divisores = primo.divisoresPrimos();
 		System.out.println(divisores);
 	}
 

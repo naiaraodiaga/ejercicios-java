@@ -3,10 +3,14 @@ package com.naiaraodiaga.funciones.ejercicio22;
 import java.util.Vector;
 
 public class Primos {
-
-	public Vector<Integer> divisoresPrimos(int num){
+	private int num;
+	
+	public Primos(int num){
+		this.num = num;
+	}
+	public Vector<Integer> divisoresPrimos(){
 		Vector<Integer> primos = new Vector<Integer>();
-		for(int i=0; i<=num; i++){
+		for(int i=0; i<=this.num; i++){
 			if(esPrimo(i)) primos.add(i); 
 		}
 		return primos;
