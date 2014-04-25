@@ -1,47 +1,60 @@
 package com.naiaraodiaga.fizzbuzz;
 
+import java.util.ArrayList;
+
+import com.naiaraodiaga.excepciones.NumberNotValidException;
+import com.naiaraodiaga.factorias.ValidadorFactoria;
+import com.naiaraodiaga.fizzbuzz.Buzz;
+import com.naiaraodiaga.fizzbuzz.Fizz;
+import com.naiaraodiaga.interfaces.IValidacion;
+
 public class FizzBuzz {
 	private String texto = "FizzBuzz";
+	private ArrayList<IValidacion> listaValidadores = new ArrayList<IValidacion>();
 	Fizz f;
 	Buzz b;
-	
+
 	public FizzBuzz() {
-		f = new Fizz();
-		b = new Buzz();
+		f = ValidadorFactoria.getFizzValidator();
+		b = ValidadorFactoria.getBuzzValidator();
+
+		this.addValidador(f);
+		this.addValidador(b);
 	}
-	
-	public String calcularFizzBuzzNumero(int num){
+
+	public String calcularFizzBuzzNumero(int num) throws NumberNotValidException {
 		String result = "";
-		if (f.esMultiploDe3(num) && b.esMultiploDe5(num)){
-			result = texto;
-		}else if (f.esMultiploDe3(num)){
-			result = f.devolverTexto();
-		}else if (b.esMultiploDe5(num)){
-			result = b.devolverTexto();
-		}else{
-			result = String.valueOf(num);
-		}
 		
-		return result;
-	}
-	
-	public String print(int num){
-		String result = "";
-		for (int i=1; i<=num; i++){
-			if (i == 1){
-				result = calcularFizzBuzzNumero(i);
-			}else{
-				result += " " + calcularFizzBuzzNumero(i);
+		for(int i=1; i<=num; i++) {
+			if (i != 1) {
+				result += " ";
 			}
-			
-//			if (i != num){
-//				result += " ";
-//			}
+			result += obtenerTexto(i);	
+		}
+
+		return result;
+	}
+
+	public String obtenerTexto(int num) throws NumberNotValidException {
+		String result = "";
+		
+		for (IValidacion validador : listaValidadores){
+			if (validador.esMultiplo(num)){
+				result += validador.devolverTexto();
+			}
+		}
+
+		if (result.length() == 0){
+			result += String.valueOf(num);
 		}
 		
 		return result;
 	}
-	
-	
+
+	public void addValidador(IValidacion v) {
+		if (!this.listaValidadores.contains(v)) {
+			this.listaValidadores.add(v);
+		}
+	}
 
 }

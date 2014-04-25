@@ -1,15 +1,17 @@
 package com.naiaraodiaga.fizzbuzz;
 
-import com.naiaraodiaga.interfaces.IValidacion;
+import com.naiaraodiaga.excepciones.NumberNotValidException;
+import com.naiaraodiaga.validadores.Validador;
 
-public class Buzz {
-	public String texto = "Buzz";
+public class Buzz extends Validador{
 	
-	public boolean esMultiploDe5(int num){
-		return (num % 5 == 0);
+	public Buzz() {
+		this.texto = "Buzz";
 	}
 
-	public String devolverTexto(){
-		return texto;
+	@Override
+	public boolean esMultiplo(int num) throws NumberNotValidException{
+		this.validateException(num);
+		return (num % 5 == 0);
 	}
 }

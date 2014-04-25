@@ -1,13 +1,18 @@
 package com.naiaraodiaga.fizzbuzz;
 
-public class Fizz {
-	public String texto = "Fizz";
+import com.naiaraodiaga.excepciones.NumberNotValidException;
+import com.naiaraodiaga.validadores.Validador;
+
+public class Fizz extends Validador{
 	
-	public boolean esMultiploDe3(int num){
-		return (num % 3 == 0);
+	public Fizz() {
+		this.texto = "Fizz";
 	}
 
-	public String devolverTexto(){
-		return texto;
+	@Override
+	public boolean esMultiplo(int num) throws NumberNotValidException{
+		this.validateException(num);
+		return (num % 3 == 0);
 	}
+	
 }
