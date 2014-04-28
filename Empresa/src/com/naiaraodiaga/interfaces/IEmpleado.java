@@ -1,5 +1,7 @@
 package com.naiaraodiaga.interfaces;
 
+import com.naiaraodiaga.excepciones.NoExisteEmpleadoException;
+
 public interface IEmpleado {
 
 	public String getNombre();
@@ -12,5 +14,5 @@ public interface IEmpleado {
 	public void aumentarSueldo(int porcentaje);
 	public void despedir();
 	public void reducirNumEmpleado();
-	public void ascender();
+	public void ascender() throws NoExisteEmpleadoException;
 }

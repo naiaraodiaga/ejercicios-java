@@ -1,5 +1,6 @@
 package com.naiaraodiaga.empresa;
 
+import com.naiaraodiaga.excepciones.NoExisteEmpleadoException;
 import com.naiaraodiaga.interfaces.IEmpleado;
 import com.naiaraodiaga.interfaces.IEmpresa;
 
@@ -80,7 +81,7 @@ public class Empleado implements IEmpleado {
 	}
 
 	@Override
-	public void ascender() {
+	public void ascender() throws NoExisteEmpleadoException {
 		Ejecutivo ejecutivo = new Ejecutivo(this.empresa, this.nombre, this.sueldo, this.numEmpleado); 
 		this.empresa.ascender(ejecutivo);
 	}

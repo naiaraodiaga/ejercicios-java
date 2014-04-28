@@ -95,7 +95,12 @@ public class Empresa implements IEmpresa{
 		}
 	}
 	
-	public void ascender(IEmpleado empleado){
-		this.arrayEmpleados.set(empleado.getNumEmpleado(), empleado);
+	public void ascender(IEmpleado ejecutivo) throws NoExisteEmpleadoException{
+		IEmpleado empleado = this.getEmpleado(ejecutivo.getNumEmpleado());
+		if(empleado != null){
+			this.arrayEmpleados.set(this.arrayEmpleados.indexOf(empleado), ejecutivo);
+		}
+		
+//		this.arrayEmpleados.set(ejecutivo.getNumEmpleado(), ejecutivo);
 	}
 }

@@ -18,5 +18,5 @@ public interface IEmpresa {
 	public void incContador();
 	public void despedirEmpleado(int indice) throws NoHayEmpleadosException;
 	public void reducirNumEmpleados(int indice);
-	public void ascender(IEmpleado empleado);
+	public void ascender(IEmpleado empleado) throws NoExisteEmpleadoException;
 }
