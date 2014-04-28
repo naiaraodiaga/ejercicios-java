@@ -13,7 +13,6 @@ public class Empresa implements IEmpresa{
 	private String nombre;
 	private int tamanio;
 	private ArrayList<IEmpleado> arrayEmpleados;
-	private int numEmpleado;
 	private int contador;
 	
 	public Empresa(String nombre, int tamanio) {
