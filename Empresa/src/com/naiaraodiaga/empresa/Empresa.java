@@ -2,6 +2,7 @@ package com.naiaraodiaga.empresa;
 
 import java.util.ArrayList;
 
+import com.naiaraodiaga.excepciones.NoExisteEmpleadoException;
 import com.naiaraodiaga.excepciones.NoHayEmpleadosException;
 import com.naiaraodiaga.excepciones.TamanioEmpleadosException;
 import com.naiaraodiaga.interfaces.IEmpleado;
@@ -40,8 +41,11 @@ public class Empresa implements IEmpresa{
 		return arrayEmpleados;
 	}
 
-	public IEmpleado getEmpleado(int indice) {
-		return arrayEmpleados.get(indice);
+	public IEmpleado getEmpleado(int indice) throws NoExisteEmpleadoException {
+		if(indice < this.contador)
+			return arrayEmpleados.get(indice);
+		else 
+			throw new NoExisteEmpleadoException("El usuario no existe");
 	}
 
 	public int getContador() {

@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import com.naiaraodiaga.empresa.Empleado;
 import com.naiaraodiaga.empresa.Empresa;
+import com.naiaraodiaga.excepciones.NoExisteEmpleadoException;
 import com.naiaraodiaga.excepciones.NoHayEmpleadosException;
 import com.naiaraodiaga.excepciones.TamanioEmpleadosException;
 import com.naiaraodiaga.interfaces.IEjecutivo;
@@ -34,7 +35,7 @@ public class EmpresaTest {
 	}
 	
 	@Test
-	public void reducirNumEmpleados() throws TamanioEmpleadosException, NoHayEmpleadosException{
+	public void reducirNumEmpleados() throws TamanioEmpleadosException, NoHayEmpleadosException, NoExisteEmpleadoException{
 		empresa.nuevoEmpleado("Ibai", 1500.00); // Num. empleado = 1
 		empresa.nuevoEmpleado("Aitor", 1800.50);  // Num. empleado = 2
 		empresa.nuevoEmpleado("Ainhoa", 1350.0);  // Num. empleado = 3
@@ -53,7 +54,7 @@ public class EmpresaTest {
 	}
 	
 	@Test
-	public void ascenderEmpleado() throws TamanioEmpleadosException{
+	public void ascenderEmpleado() throws TamanioEmpleadosException, NoExisteEmpleadoException{
 		empresa.getEmpleado(0).ascender();
 		assertTrue(this.empresa.getEmpleado(0) instanceof IEjecutivo);
 		empresa.nuevoEmpleado("Iraun", 1225.0);

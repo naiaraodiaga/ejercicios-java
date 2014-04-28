@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import com.naiaraodiaga.empresa.Empleado;
 import com.naiaraodiaga.empresa.Empresa;
+import com.naiaraodiaga.excepciones.NoExisteEmpleadoException;
 import com.naiaraodiaga.excepciones.TamanioEmpleadosException;
 
 public class EmpleadoTest {
@@ -21,7 +22,7 @@ public class EmpleadoTest {
 	}
 
 	@Test
-	public void testToString() throws TamanioEmpleadosException {
+	public void testToString() throws TamanioEmpleadosException, NoExisteEmpleadoException {
 		empresa.nuevoEmpleado("Aitor", 1800.50);
 		Empleado newEmpleado = (Empleado) empresa.getEmpleado(1);
 		assertEquals("toString", "0 Leire 1000.0", empleado.toString());

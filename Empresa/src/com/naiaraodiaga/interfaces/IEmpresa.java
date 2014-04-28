@@ -2,6 +2,7 @@ package com.naiaraodiaga.interfaces;
 
 import java.util.ArrayList;
 
+import com.naiaraodiaga.excepciones.NoExisteEmpleadoException;
 import com.naiaraodiaga.excepciones.NoHayEmpleadosException;
 import com.naiaraodiaga.excepciones.TamanioEmpleadosException;
 
@@ -10,7 +11,7 @@ public interface IEmpresa {
 	public void setNombre(String nombre);
 	public int getTamanio();
 	public ArrayList<IEmpleado> getArrayEmpleados();
-	public IEmpleado getEmpleado(int indice);
+	public IEmpleado getEmpleado(int indice) throws NoExisteEmpleadoException ;
 	public void nuevoEmpleado(String nombre, double sueldo) throws TamanioEmpleadosException;
 	public int getContador();
 	public void setContador(int contador);
