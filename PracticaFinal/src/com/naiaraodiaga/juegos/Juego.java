@@ -3,7 +3,7 @@ package com.naiaraodiaga.juegos;
 import com.naiaraodiaga.juegos.excepciones.NoHayMasVidasException;
 import com.naiaraodiaga.juegos.interfaces.IJuego;
 
-public class Juego implements IJuego{
+public abstract class Juego implements IJuego{
 	private int vidasRestantes;
 	private int vidas;
 	private static int record = 0;
