@@ -14,19 +14,19 @@ public class JuegoAdivinaPar extends JuegoAdivinaNumero{
 		if(num % 2 == 0)
 			return true;
 		else{
-			this.mostrarMensaje("El número no es par");
+			this.mostrarMensaje("El nœmero no es par");
 			return false;
 		}
 	}
 	
 	@Override
 	public void muestraNombre() {
-		this.mostrarMensaje("Adivina un número par");
+		this.mostrarMensaje("Adivina un nœmero par");
 	}
 	
 	@Override
 	public void muestraInfo() {
-		this.mostrarMensaje("Descripción del juego: Adivine un número par entre 0 y 10. Tiene 3 intentos en total");
+		this.mostrarMensaje("Descripci—n del juego: Adivine un nœmero par entre 0 y 10. Tiene 3 intentos en total");
 	}
 	
 	@Override

@@ -19,7 +19,15 @@ public class Teclado {
 		else
 			throw new NoEsNumericoException("Debe introducir un nœmero entre 0 y 10");
 	}
+	
+	public Character leerTeclado() {
+		String value;
+		Scanner entrada = new Scanner (System.in);
+		value = entrada.next();
+		
+		return value.charAt(0);
 
+	}
 
 	public boolean esNumerico(String num) {
 		for(int i = 0; i < num.length(); i++){
