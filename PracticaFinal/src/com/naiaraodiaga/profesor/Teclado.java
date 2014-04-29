@@ -17,7 +17,7 @@ public class Teclado {
 		if(esNumerico(String.valueOf(num)))
 			return Integer.parseInt(num);
 		else
-			throw new NoEsNumericoException("Debe introducir un nœmero");
+			throw new NoEsNumericoException("Debe introducir un nœmero entre 0 y 10");
 	}
 
 
