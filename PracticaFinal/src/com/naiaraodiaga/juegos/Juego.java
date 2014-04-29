@@ -25,7 +25,7 @@ public abstract class Juego implements IJuego{
 	
 	@Override
 	public void muestraVidasRestantes() {
-		System.out.println(vidasRestantes); 
+		mostrarMensaje(String.valueOf(this.vidasRestantes));
 	}
 
 	@Override
@@ -49,12 +49,12 @@ public abstract class Juego implements IJuego{
 		if(vidasRestantes == record)
 			mostrarMensaje("Se ha alcanzado el record");
 		else if (this.vidasRestantes > record){
-			
-			mostrarMensaje("Se ha alcanzado el record");
+			mostrarMensaje("Se ha alcanzado el record: "+this.vidasRestantes);
 		}
 	}
 
 	public void mostrarMensaje(String mensaje){
 		System.out.println(mensaje);
 	}
+
 }
