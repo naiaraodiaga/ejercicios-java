@@ -14,7 +14,7 @@ public class Teclado {
 		String num;
 		Scanner entrada = new Scanner (System.in);
 		num = entrada.next();
-		if(esNumerico(String.valueOf(num)))
+		if(esNumericoValido(String.valueOf(num)))
 			return Integer.parseInt(num);
 		else
 			throw new NoEsNumericoException("Debe introducir un nœmero entre 0 y 10");
@@ -29,7 +29,7 @@ public class Teclado {
 
 	}
 
-	public boolean esNumerico(String num) {
+	public boolean esNumericoValido(String num) {
 		for(int i = 0; i < num.length(); i++){
 			if(!Character.isDigit(num.charAt(i)))
 				return false;
